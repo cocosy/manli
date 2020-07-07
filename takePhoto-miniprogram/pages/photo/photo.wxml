@@ -1,0 +1,65 @@
+<!-- 最终保存的 -->
+
+
+<canvas canvas-id="download" class="downloadCanvas"></canvas>
+
+<view wx:if="{{step=='1'}}">
+  <camera device-position="{{device}}" flash="{{isFlash}}" class="camerabgImage-view" wx:if='{{showCamera}}'></camera>
+  <!-- 在页面上展示的 -->
+  <canvas canvas-id="show" class="showCanvas"></canvas>
+
+  <!-- 模版 -->
+  <scroll-view scroll-x='true' style='width:100%;height:20%' class="module" wx:if='{{!isSelectFilter}}'>
+    <view class="img-total">
+      <view class="img" wx:for='{{modules}}' wx:key='index'>
+        <image src="{{item.img}}" bindtap="selectModule" data-item='{{item}}' data-index="{{index}}"></image>
+        <view class="mask" wx:if='{{item.isSelected}}'>
+          <image src="../../static/icon-color.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 滤镜 -->
+  <scroll-view scroll-x='true' style='width:100%;height:20%' class="module" wx:if='{{isSelectFilter}}'>
+    <view class="img-total">
+      <view class="img" wx:for='{{filters}}' wx:key='index'>
+        <view class="filter" style="background-color:{{item.bgColor}};opacity:{{item.opacity}}" bindtap="chooseFilter" data-index="{{index}}"></view>
+        <view class="mask" wx:if='{{item.isSelected}}'>
+          <image src="../../static/icon-color.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 下面拍照功能 -->
+  <view class="first" wx:if='{{!isSelectFilter}}'>
+    <view class="left">
+      <image src="../../static/filter.png" mode="aspectFill" wx:if='{{!hasSelectFilter}}' bindtap="showFilter"></image>
+      <image src="../../static/filter-choose.png" mode="aspectFill" wx:if='{{hasSelectFilter}}' bindtap="showFilter"></image>
+    </view>
+    <view class="photo-btn">
+      <view class="inner" bindtap="takePhoto"></view>
+    </view>
+    <view class="auto">
+      <image src="../../static/auto.png" mode="widthFix" bindtap="changeDevice"></image>
+    </view>
+  </view>
+  <!-- 选择滤镜 -->
+  <view wx:if="{{isSelectFilter}}" class="first operation-choose">
+    <image src="/static/close.png" mode="widthFix" bindtap="closeFilter"></image>
+    <image src="/static/right.png" mode="widthFix" bindtap="sureFilter"></image>
+  </view>
+</view>
+
+<view wx:if="{{step=='2'}}">
+  <image src="{{photoPath}}" class="photoImg"></image>
+  <image src="{{chooseImg}}" class="photoImg"></image>
+  <view class="photoImg" style="background-color:{{selectFilter.bgColor}};opacity:{{selectFilter.opacity}}"></view>
+ 
+<!-- 下面返回和添加文字 -->
+  <view class="second">
+    <image src="/static/back.png" mode="widthFix" bindtap="back"></image>
+    <view class="download">
+      <image src="/static/download02.png" mode="widthFix" bindtap="download"></image>
+    </view>
+  </view>
+</view>

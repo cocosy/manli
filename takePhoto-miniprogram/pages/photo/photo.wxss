@@ -1,0 +1,132 @@
+/* pages/photo/photo.wxss */
+.camerabgImage-view{
+  height: 70vh;
+  width: 100vw;
+ }
+
+.showCanvas{
+  position: absolute;
+  top: 0;
+  height: 70vh;
+  width: 100vw;
+}
+
+.downloadCanvas{
+  position: absolute;
+  left: -999px;
+  top: -999px;
+  width:100vw ;
+  height: 70vh;
+}
+
+.first{
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+  width: 90%;
+}
+.photo-btn{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid #0000FF;
+  text-align: center;
+}
+
+.inner{
+  margin: 4px auto;
+  width: 48px;
+  height: 48px;
+  background-image: linear-gradient(#0000FF, #F07392);
+  border-radius: 50%;
+}
+
+.left image{
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.auto image{
+  width: 25px;
+  border-radius: 5px;
+}
+
+
+.module{
+  margin-top: 20rpx;
+  display: flex;
+  text-align: center;
+}
+
+.img-total{
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+.img{
+  width: 60px;
+  margin-right: 5px;
+}
+
+.img image{
+  width:60px;
+  height: 90px;
+}
+
+.mask{
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100px;
+  z-index: 999;
+  background-color: #000;
+  opacity: 0.3;
+}
+
+.mask image{
+  width: 20px;
+ 
+}
+
+.filter{
+  width: 60px;
+  height: 60px;
+}
+.operation-choose image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.photoImg{
+  position: absolute;
+  top: 0;
+  width:100vw;
+  height: 70vh;
+}
+.second{
+  position: absolute;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+}
+
+.second image{
+  width: 50rpx;
+  background-color: 000;
+}
+
+.download image{
+  width: 100rpx;
+}
+
+.input{
+  position: absolute;
+  border: 1rpx solid #000;
+  width: 400rpx
+}
